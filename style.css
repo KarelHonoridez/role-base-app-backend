@@ -1,0 +1,51 @@
+/* ─── Page Routing ───────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ─── Auth State ─────────────────────────────────────────── */
+body.not-authenticated .role-logged-in  { display: none; }
+body.authenticated     .role-logged-out { display: none; }
+
+/* ─── Role-based nav items ───────────────────────────────── */
+.role-admin { display: none; }
+body.is-admin .role-admin { display: block; }
+
+.role-user { display: none; }
+body.is-user .role-user { display: block; }
+
+/* ─── Toast Container ────────────────────────────────────── */
+#toast-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 280px;
+}
+
+/* ─── Page fade-in ───────────────────────────────────────── */
+.page.active {
+    animation: fadeIn 0.15s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Tables ─────────────────────────────────────────────── */
+.table-responsive { width: 100%; }
+
+/* ─── Forms ──────────────────────────────────────────────── */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* ─── Navbar brand spacing ───────────────────────────────── */
+.navbar-brand { letter-spacing: 0.01em; }
+
+/* ─── Responsive padding ─────────────────────────────────── */
+@media (max-width: 576px) {
+    .page { padding: 20px 15px !important; }
+}
